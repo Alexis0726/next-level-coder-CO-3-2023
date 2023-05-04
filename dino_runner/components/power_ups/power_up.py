@@ -4,9 +4,9 @@ from dino_runner.utils.constants import SCREEN_WIDTH
 
 class PowerUp(Sprite):
 
-    def __init__(self, imaage, type):
+    def __init__(self, image, type):
         print("power")
-        self.image = imaage
+        self.image = image
         self.type = type
         self.rect = self.image.get_rect()
         self.rect.y = 125
