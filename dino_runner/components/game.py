@@ -1,11 +1,9 @@
 from random import randint
-import random
 import pygame
 from dino_runner.components.player_hearts.heart_manager import HeartManager
 from dino_runner.components.power_ups.power_up_manager import PowerUpManager
 from dino_runner.utils.constants import (
     BG,
-    DEFAULT_TYPE,
      FONT_ARIAL,
      ICON,
      SCREEN_HEIGHT,
@@ -31,7 +29,7 @@ class Game:
         self.obstacle_manager = ObstacleManager()
         self.power_up_manager = PowerUpManager()
         self.heart_manager = HeartManager()
-        self.daltonic_mode_time = 0
+        
 
 
     
@@ -95,9 +93,10 @@ class Game:
 
     def daltonic_mode(self):
         display_background = self.screen.fill((255, 255, 255))
-        if (self.points > 1000 and self.points < 1100) or (self.points > 2000 and self.points < 2100) or (self.points > 3000 and self.points < 3100) or (self.points > 4000 and self.points < 4100) or self.points > 5000:
+        if (self.points > 1000 and self.points < 1100) or (self.points >2000 and self.points < 2100) or (
+            self.points > 3000 and self.points < 3100) or (self.points > 4000 and self.points < 4100
+            ) or self.points > 5000:
                 display_background = self.screen.fill((randint(0,255), randint(0,255), randint(0,255)))
                 self.game_speed += 0.1
-        else:
-            display_background = self.screen.fill((255, 255, 255))
-            return display_background    
+       
+        return display_background    
